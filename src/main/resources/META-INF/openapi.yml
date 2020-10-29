@@ -1,0 +1,30 @@
+components:
+  schemas:
+    Company:
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+    Department:
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+
+paths:
+  /api/company:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company'
+  /api/department:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Department'

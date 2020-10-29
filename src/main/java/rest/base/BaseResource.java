@@ -4,6 +4,7 @@ import io.quarkus.arc.Arc;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import service.base.BaseService;
 import util.BaseUtil;
 
@@ -43,7 +44,7 @@ public class BaseResource<T> {
     }
 
     @PostMapping
-    public T save(T t) {
+    public T save(@RequestBody T t) {
         return baseService.save(t);
     }
 
