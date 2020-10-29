@@ -1,0 +1,14 @@
+quarkus:
+  datasource:
+    db-kind: mysql
+    username: root
+    password: root
+    jdbc:
+      url: jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Shanghai
+  liquibase:
+    migrate-at-start: true
+    change-log: db/main.xml
+    database-change-log-lock-table-name: liquibaselock
+    database-change-log-table-name: liquibase
+  http:
+    port: 80
