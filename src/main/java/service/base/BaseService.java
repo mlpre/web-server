@@ -36,8 +36,16 @@ public abstract class BaseService<T> {
     }
 
     @Transactional
-    public T save(T t) {
+    public T merge(T t) {
         return entityManager.merge(t);
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        T t = this.findById(id);
+        if (t != null) {
+            entityManager.remove(findById(id));
+        }
     }
 
 }

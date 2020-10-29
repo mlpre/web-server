@@ -2,16 +2,30 @@ components:
   schemas:
     Company:
       properties:
+        id:
+          type: integer
+          format: int64
+        deleted:
+          type: integer
+          format: int64
         name:
           type: string
         code:
           type: string
     Department:
       properties:
+        id:
+          type: integer
+          format: int64
+        deleted:
+          type: integer
+          format: int64
         name:
           type: string
         code:
           type: string
+        company:
+          $ref: '#/components/schemas/Company'
 
 paths:
   /api/company:
